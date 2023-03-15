@@ -77,8 +77,8 @@ public class App {
         Personne anonyme = new Personne();
 
         //Affectation des attributes de l'objet anonyme
-        anonyme.prenom = "Tarek";
-        anonyme.nom = "Najem";
+        anonyme.prenom = "Rafik";
+        anonyme.nom = "MAACHI";
         anonyme.age = 31;
 
         //Informer l'utilisateur depuis le terminal à propos de la donnée d'entrée à saisir
