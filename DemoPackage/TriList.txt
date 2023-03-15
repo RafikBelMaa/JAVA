@@ -1,0 +1,56 @@
+package monPackage;
+
+public class TriList {    
+    public static void main(String[] args) {
+        int[] listElements = {26, 5, 27, 64, 34, 25, 12, 22, 11, 90};
+        System.out.println("Données initiales à trier :");
+        System.out.println("26, 5, 27, 64, 34, 25, 12, 22, 11, 90");
+
+        // Comparaison de chaque élément de la liste pour le positionner dans l'ordre dans la liste
+        // On incrémente au fur et à mesure i, pour le placer dans la liste en fonction de n
+        
+        // Appel de la fonction bubbleSort pour la liste <listElement>
+        bubbleSort(listElements);        
+        System.out.println("Données triées par ordre croissant :");
+        for (int k = 0; k < listElements.length; k++) {
+            System.out.print(listElements[k] + ", ");
+        }
+    }
+    // La boucle externe itère du premier élément à l'avant-dernier élément du tableau, 
+    // tandis que la boucle interne itère du premier élément à l'avant-dernier élément moins le nombre d'itérations externes
+    // Après chaque itération de la boucle externe, le plus grand élément non trié est déplacé à la fin des éléments non triés.
+    // À l'intérieur de la boucle interne, on compare les éléments adjacents et on les échange s'ils ne sont pas dans le bonne ordre.    
+    
+    public static void bubbleSort(int[] arr) {
+        // Déclaration de la variable n pour trouver le nombre d'élément présent dans la liste <listElements>
+        int n = arr.length; 
+        // Déclaration de la boucle externe i
+        // Déclaration de la boucle interne j
+
+        // Initialisation de la boucle interne et de la boucle exerne
+        // on définit la boucle interne i à 0
+        // Si la valeur de i est inférieur n-1 (avant dernier élément)
+        for (int i = 0; i < n - 1; i++) {
+            // pour une valeur de j inférieure au nombre d'éléments (n-1) moins la valeur d'un élément de la boucle interne i
+            // Déclaration de la variable <indexofLastUnsortedElement> représentant l'index du dernier élément non trié
+            int indexofLastUnsortedElement = n - 1 -i;
+
+            for (int j = 0; j < indexofLastUnsortedElement; j++) {
+                // Déclaration de la variable représentant l'élément à gauche <leftElement>
+                int leftElement = arr[j]; 
+                // Déclaration de la variable représentant l'élément à droite <rightElement>
+                int rightElement =  arr[j + 1];
+
+                if (leftElement > rightElement) {  // Si l'élément de gauche est supérieur à l'élément de droite
+                    // Déclaration d'une variable temporaire <temp> pour stocker au fur et à mesure les éléments de la liste triés
+                    int temp = leftElement;          
+                    // On déplace après chaque itération la valeur la plus grande en fin de liste
+                    leftElement = rightElement;
+                    rightElement = temp;
+                    // On bloucle alors sur chaque élément pour les positionner alors en fin de liste avant le plus grand élément placé précedemment 
+                }
+            }
+        }
+    }
+
+}
